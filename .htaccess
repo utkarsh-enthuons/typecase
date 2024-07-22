@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L] 
+# RewriteRule ^category/([a-zA-Z0-9-/.]+)$ product-list.php?top=$1&mid=$2
+RewriteRule ^category/([a-zA-Z0-9-/.]+)/([a-zA-Z0-9-/.]+)$ product-list.php?top=$1&mid=$2
+RewriteRule ^category/([a-zA-Z0-9-/.]+)$ product-list.php?top=$1
+RewriteRule ^product/([a-zA-Z0-9-/.]+)$ product-detail.php?slug=$1
+RewriteRule ^blogs/([a-zA-Z0-9-/.]+)$ blog-details.php?slug=$1
